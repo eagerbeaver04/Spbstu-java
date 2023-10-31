@@ -1,0 +1,4 @@
+Java lab2
+class LScanner
+Markov Mikhail
+5030102/10201
