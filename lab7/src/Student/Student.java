@@ -38,7 +38,7 @@ public class Student
         System.out.println("Surname: " + surname);
         System.out.println("Age: " + age);
         System.out.println("Group: " + group);
-        System.out.println("");
+        System.out.println();
     }
 
 }
