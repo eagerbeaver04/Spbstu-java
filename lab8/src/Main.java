@@ -21,9 +21,9 @@ public class Main
             System.out.print("final");
         System.out.println();
     }
-    public static void printClassConstructors(Class<?> instance)
+
+    public static void printEveryConstructor(Constructor<?>[] constructors)
     {
-        Constructor<?>[] constructors = instance.getConstructors();
         for (var constructor : constructors)
         {
             System.out.print("Constructor " + constructor.getName() + "(): Fields:");
@@ -33,9 +33,16 @@ public class Main
         }
         System.out.println("\n");
     }
-    public static void printClassFields(Class<?> instance)
+    public static void printClassConstructors(Class<?> instance)
     {
-        Field[] fields = instance.getDeclaredFields();
+        Constructor<?>[] constructors = instance.getConstructors();
+        printEveryConstructor(constructors);
+
+        constructors = instance.getDeclaredConstructors();
+        printEveryConstructor(constructors);
+    }
+    public static void printEveryField( Field[] fields)
+    {
         for (var field : fields)
         {
             Class<?> fld = field.getType();
@@ -44,9 +51,15 @@ public class Main
         }
         System.out.println();
     }
-    public static void printClassMethods(Class<?> instance)
+    public static void printClassFields(Class<?> instance)
     {
-        Method[] methods = instance.getMethods();
+        Field[] fields = instance.getFields();
+        printEveryField(fields);
+        fields = instance.getDeclaredFields();
+        printEveryField(fields);
+    }
+    public static void printEveryMethod(Method[] methods)
+    {
         for (var method : methods)
         {
             System.out.println("Method name : " + method.getName());
@@ -60,6 +73,13 @@ public class Main
             System.out.println();
         }
         System.out.println();
+    }
+    public static void printClassMethods(Class<?> instance)
+    {
+        Method[] methods = instance.getMethods();
+        printEveryMethod(methods);
+        methods = instance.getDeclaredMethods();
+        printEveryMethod(methods);
     }
     public static void printClassInterfaces(Class<?> instance)
     {
