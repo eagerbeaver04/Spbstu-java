@@ -1,50 +1,46 @@
 package MyStack;
 
-import java.lang.reflect.Array;
+import java.util.Arrays;
 
-public class MyStack
+public class MyStack<T>
 {
-    private final int capacity;
-    private int top;
-    private final int[] values;
+    private int length = 0;
+    private T[] values;
     public MyStack(int i)
     {
-        capacity = i;
-        top = -1;
-        values = new int[capacity];
+        length = i;
+        values = (T[]) new Object[i];
     }
     public boolean isEmpty()
     {
-        return top == -1;
+        return values.length == 0;
     }
-    public boolean isFull()
+    public void push(T i)
     {
-        return top == capacity -1;
-    }
-    public void push(int i)
-    {
-        if(isFull())
+        if(length == values.length)
         {
-            System.out.println("Stack is full");
+            values = Arrays.copyOf(values, 2 * values.length);
             return;
         }
-        top++;
-        values[top] = i;
+        values[length] = i;
+        length++;
     }
-    public int pop()
+    public T pop()
     {
         if(!isEmpty())
         {
-            top--;
-            return values[top+1];
+            length--;
+            T tmp = values[length];
+            values[length] = null;
+            return tmp;
         }
         System.out.println("Stack is empty");
-        return 0;
+        return null;
     }
     public void print()
     {
         if(!isEmpty())
-            for(int i = 0; i <= top; i++)
+            for(int i = 0; i < values.length; i++)
                 System.out.println("[" + i + "]: " + values[i]);
     }
 
