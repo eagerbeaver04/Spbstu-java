@@ -8,9 +8,9 @@ public class Main
         System.out.println("Base constructor");
         inst.print();
         System.out.println("Pushing...");
-        for (int index = 0; index < 10; index += 1) {
+        for (int index = 0; index < 10; index += 1)
             inst.push(index);
-        }
+        
         inst.print();
         int b = inst.pop();
         System.out.println("Deleted element: " + b);

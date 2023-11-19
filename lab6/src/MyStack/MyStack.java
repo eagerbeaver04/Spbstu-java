@@ -18,10 +18,8 @@ public class MyStack<T>
     public void push(T i)
     {
         if(length == values.length)
-        {
             values = Arrays.copyOf(values, 2 * values.length);
-            return;
-        }
+
         values[length] = i;
         length++;
     }
@@ -40,7 +38,7 @@ public class MyStack<T>
     public void print()
     {
         if(!isEmpty())
-            for(int i = 0; i < values.length; i++)
+            for(int i = 0; i < length; i++)
                 System.out.println("[" + i + "]: " + values[i]);
     }
 
