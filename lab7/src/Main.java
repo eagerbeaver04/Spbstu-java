@@ -1,4 +1,5 @@
 import Student.Student;
+import Wrapper.Wrapper;
 public class Main
 {
     public static void main(String[] args)
@@ -7,7 +8,13 @@ public class Main
         Student st2 = new Student("Vasya", "Pupkin", 40, "3");
         System.out.println("st1: ");st1.print();
         System.out.println("st2: ");st2.print();
-        st1.swap(st2);
+        Wrapper<Student> inst1 = new Wrapper<>(st1);
+        Wrapper<Student> inst2 = new Wrapper<>(st2);
+
+        inst1.swap(inst2);
+        st1 = inst1.getData();
+        st2 = inst2.getData();
+        
         System.out.println("former st1: ");st1.print();
         System.out.println("former st2: ");st2.print();
 
