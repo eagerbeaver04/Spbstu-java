@@ -9,8 +9,8 @@ public class Main
     {
         if (args.length < 2)
         {
-            System.out.println("Incorrect request");
-            System.out.println("Use: java Huffman <encode/decode/info> <inputFile>");
+            System.out.println("Incorrect request in Huffman/src folder");
+            System.out.println("Use: java Main <encode/decode/info> <inputFile>");
             return;
         }
 
@@ -37,7 +37,7 @@ public class Main
                     huffman.printInfo();
                 }
                 default ->
-                        System.out.println("Invalid mode. Use 'encode', 'decode', or 'info'.");
+                        System.out.println("Invalid mode. Use 'encode', 'decode', or 'info'");
             }
         }
         catch (IOException e)
