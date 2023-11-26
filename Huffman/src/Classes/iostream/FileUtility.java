@@ -7,18 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
-public class FileUtility {
-
-    public static int getOriginalSize(String originalData)
-    {
-        return originalData.length();
-    }
-
-    public static long getCompressedSize(String filename)
-    {
-        File file = new File(filename);
-        return file.length();
-    }
+public class FileUtility
+{
 
     public static String getFileExtension(String filename) {
         int lastDotIndex = filename.lastIndexOf('.');

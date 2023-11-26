@@ -23,7 +23,7 @@ public class HuffmanDecoder
         decoded = "";
     }
 
-    public void decodeFile(BitReader reader) throws IOException
+    private void decodeFile(BitReader reader) throws IOException
     {
         huffmanCode = FileReader.readHuffmanCode(reader);
         decoded = FileReader.readEncodedStringFromFile(reader, huffmanCode);
