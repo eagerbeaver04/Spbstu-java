@@ -39,7 +39,8 @@ public class Main
                 default ->
                         System.out.println("Invalid mode. Use 'encode', 'decode', or 'info'.");
             }
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.out.println("Error: " + e.getMessage());
         }
