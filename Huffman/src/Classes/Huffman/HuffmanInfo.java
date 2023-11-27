@@ -10,8 +10,8 @@ public class HuffmanInfo
 
     String inputFilename;
     String outputFilename;
-    private long inputSize;
-    private long outputSize;
+    private long encodedSize;
+    private long decodedSize;
     private double compressionRatio;
 
     public HuffmanInfo()
@@ -19,8 +19,8 @@ public class HuffmanInfo
         inputFilename = "";
         outputFilename = "";
         info = new HuffmanDecoder();
-        inputSize=0;
-        outputSize=0;
+        encodedSize=0;
+        decodedSize=0;
         compressionRatio=0;
     }
 
@@ -33,9 +33,9 @@ public class HuffmanInfo
 
     private void getSizes() throws IOException
     {
-        inputSize = FileUtility.getFileSizeNIO(inputFilename);
-        outputSize = FileUtility.getFileSizeNIO(outputFilename);
-        compressionRatio = (double) inputSize / outputSize;
+        encodedSize = FileUtility.getFileSizeNIO(inputFilename);
+        decodedSize = FileUtility.getFileSizeNIO(outputFilename);
+        compressionRatio = (double) decodedSize / encodedSize;
     }
 
     public void getInfo(String filename) throws IOException
@@ -46,8 +46,8 @@ public class HuffmanInfo
     public void printInfo()
     {
         info.printHuffmanCode();
-        System.out.println("Original size: " + inputSize + " bytes");
-        System.out.println("Compressed size: " + outputSize + " bytes");
+        System.out.println("Original size: " + decodedSize + " bytes");
+        System.out.println("Compressed size: " + encodedSize + " bytes");
         System.out.println("Compression ratio: " + compressionRatio * 100 + "%");
     }
 }

@@ -43,7 +43,7 @@ public class BitWriter implements Closeable
     @Override
     public void close() throws IOException {
         while (numBitsFilled != 0)
-            writeBit(false);
+            writeBit(true);
         outputStream.close();
     }
 }
