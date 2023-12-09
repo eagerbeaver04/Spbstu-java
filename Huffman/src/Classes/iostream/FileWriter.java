@@ -11,7 +11,10 @@ public class FileWriter
     {
         try (BitWriter Output = new BitWriter(new FileOutputStream(outputFilename)))
         {
-            String extension = FileUtility.getFileExtension(inputFilename);
+            int lastDotIndex = inputFilename.lastIndexOf('.');
+            String extension="";
+            if (lastDotIndex != -1)
+                extension = inputFilename.substring(lastDotIndex + 1);
             for (int i = 0; i < extension.length(); i++)
             {
                 char extensionChar = extension.charAt(i);

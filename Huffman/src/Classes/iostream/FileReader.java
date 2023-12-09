@@ -12,7 +12,7 @@ public class FileReader
         try (BitReader Input = new BitReader(new FileInputStream(filename)))
         {
             StringBuilder stringBuilder = new StringBuilder();
-            int bit;
+            int bit=0;
             while ((bit = Input.readBits(8)) != -1)
             {
                 char character = (char) bit;
@@ -22,9 +22,9 @@ public class FileReader
         }
     }
 
-    public static String readEncodedStringFromFile(BitReader Input, Map<Character, String> huffmanCode) throws IOException {
+    public static String readEncodedFile(BitReader Input, Map<Character, String> huffmanCode) throws IOException {
         StringBuilder content = new StringBuilder();
-        int bit;
+        int bit=0;
         StringBuilder currentCode = new StringBuilder();
         while ((bit = Input.readBit()) != -1)
         {

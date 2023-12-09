@@ -10,15 +10,6 @@ import java.util.Objects;
 public class FileUtility
 {
 
-    public static String getFileExtension(String filename) {
-        int lastDotIndex = filename.lastIndexOf('.');
-        if (lastDotIndex == -1)
-            return "";
-        else
-            return filename.substring(lastDotIndex + 1);
-
-    }
-
     public static String getBaseFilename(String filename) {
         int lastDotIndex = filename.lastIndexOf('.');
         if (lastDotIndex == -1)
