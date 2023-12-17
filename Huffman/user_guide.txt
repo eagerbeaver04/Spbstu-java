@@ -12,8 +12,6 @@
 - Команда Encode:
   java Main encode Files/input.txt
 - Команда Decode:
-  java Main decode Files/input.ark
+  java Main decode input.arc
 - Команда Info:
-  java Main info Files/input.ark
-
-Закодированные и декодированные файлы будут созданы в папке, где находится inputFile.
+  java Main info input.arc

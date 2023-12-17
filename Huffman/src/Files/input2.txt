@@ -1,10 +1,2 @@
-Lorem ipsum dolor sit amet,
-consectetur adipiscing elit.
-Pellentesque iaculis tristique
-ligula et faucibus. Sed dolor ex,
-dignissim a diam in, interdum
-fermentum sapien. Phasellus ut
-sollicitudin nibh, vitae tincidunt
-est. Nullam in odio ultricies,
-rutrum dui sed, iaculis magna.
+privet mirr
 
